@@ -15,7 +15,6 @@ export type TTestimonial = {
   testimonial: string;
   designation: string;
   company: string;
-  image: string;
 } & Required<Pick<TCommonProps, "name">>;
 
 export type TProject = {
@@ -25,7 +24,6 @@ export type TProject = {
     color: string;
   }[];
   image: string;
-  sourceCodeLink: string;
 } & Required<Pick<TCommonProps, "name">>;
 
 export type TTechnology = Required<Omit<TCommonProps, "title">>;

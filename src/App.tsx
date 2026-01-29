@@ -1,5 +1,5 @@
+import { useEffect, Suspense, lazy } from "react";
 import { BrowserRouter } from "react-router-dom";
-
 import {
   About,
   Contact,
@@ -9,10 +9,11 @@ import {
   Navbar,
   Tech,
   Works,
-  StarsCanvas,
 } from "./components";
-import { useEffect } from "react";
 import { config } from "./constants/config";
+
+// Lazy load stars to unblock main thread
+const StarsCanvas = lazy(() => import("./components/canvas/Stars"));
 
 const App = () => {
   useEffect(() => {
@@ -22,20 +23,32 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <div className="bg-primary relative z-0">
-        <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
-          <Navbar />
-          <Hero />
-        </div>
-        <About />
-        <Experience />
-        <Tech />
-        <Works />
-        <Feedbacks />
-        <div className="relative z-0">
-          <Contact />
-          <StarsCanvas />
+    <BrowserRouter
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      }}
+    >
+      {/* REMOVED SmoothScroll WRAPPER - Native scrolling is faster */}
+      <div className="relative min-h-screen bg-[#050505]">
+        <div className="relative z-10">
+          <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
+            <Navbar />
+            <Hero />
+          </div>
+          
+          <About />
+          <Experience />
+          <Tech />
+          <Works />
+          <Feedbacks />
+          
+          <div className="relative">
+            <Contact />
+            <Suspense fallback={null}>
+              <StarsCanvas />
+            </Suspense>
+          </div>
         </div>
       </div>
     </BrowserRouter>

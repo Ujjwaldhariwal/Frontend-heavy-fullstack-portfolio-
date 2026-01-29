@@ -24,14 +24,13 @@ import {
   git,
   figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
+  infinite,
+  hippo,
+
   threejs,
+  UPPCL,
+  ICRS,
+  horizon,
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
@@ -51,19 +50,19 @@ export const navLinks: TNavLink[] = [
 
 const services: TService[] = [
   {
-    title: "Web Developer",
+    title: "Frontend Architect",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "Data Visualization",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Full Stack Engineer",
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "System Design",
     icon: creator,
   },
 ];
@@ -125,55 +124,42 @@ const technologies: TTechnology[] = [
 
 const experiences: TExperience[] = [
   {
-    title: "React.js Developer",
-    companyName: "Starbucks",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "React Native Developer",
-    companyName: "Tesla",
-    icon: tesla,
+    title: "Associate Software Engineer",
+    companyName: "Infinite Computer Solutions",
+    icon: infinite, 
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Sep 2024 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Architecting the UPPCL MDM Analytics Dashboard using React, TypeScript, and Visx to visualize 5,000+ meter records.",
+      "Engineered a scalable Node.js & PostgreSQL backend with Redis caching, reducing network calls by 35% and achieving TTFB under 2s.",
+      "Built the BEST ICRS Complaint Portal serving 2,000+ daily users, featuring WCAG 2.1 AA accessibility and an AI chatbot automating 40% of queries.",
+      "Implemented CI/CD workflows using Docker and Vercel, reducing release cycles from days to hours.",
     ],
   },
   {
-    title: "Web Developer",
-    companyName: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    companyName: "Meta",
-    icon: meta,
+    title: "Software Engineer Intern",
+    companyName: "Infinite Computer Solutions",
+    icon: infinite, 
     iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    date: "Jan 2024 - Aug 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed modular dashboard UIs with Next.js SSR for the Infinite Horizon Employee Portal, reducing perceived load time by 40%.",
+      "Designed an Elasticsearch-based search microservice with autocomplete and advanced filters.",
+      "Optimized document storage using AWS S3 presigned URLs, cutting upload times by 60%.",
+      "Collaborated with UX designers to translate Figma wireframes into pixel-perfect interactive interfaces.",
+    ],
+  },
+  {
+    title: "Frontend Developer Intern",
+    companyName: "Hippo Toys",
+    icon: hippo, 
+    iconBg: "#E6DEDD",
+    date: "May 2023 - Nov 2023",
+    points: [
+      "Built a complete checkout flow UI with multi-step forms, Razorpay payment integration, and order tracking.",
+      "Designed an admin analytics dashboard handling 10K+ records using TanStack Table with server-side pagination.",
+      "Introduced JWT + Google OAuth authentication, improving onboarding efficiency by 20%.",
+      "Optimized React performance by implementing code-splitting and lazy loading.",
     ],
   },
 ];
@@ -181,93 +167,87 @@ const experiences: TExperience[] = [
 const testimonials: TTestimonial[] = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+      "Ujjwal's optimization of our dashboard reduced load times significantly. His attention to detail is unmatched.",
+    name: " Ratan Bhooshan",
+    designation: "Technical Manager",
+    company: "ICS",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+      "He successfully bridged the gap between complex backend logic and a beautiful. His Design's are exceptionaly good for Government Portals;  accessible user interface.",
+    name: " Sunil Kumar",
+    designation: " Senior Software Engineer",
+    company: "ICS",
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+      "The Fullstack app Ujjwal contributed to was a game-changer for our business. The checkout process he built is seamless and user-friendly.",
+    name: "Sandeep Kumar",
+    designation: "Founder",
+    company: "Hippo Toys",
   },
 ];
 
 const projects: TProject[] = [
   {
-    name: "Car Rent",
+    name: "UPPCL Analytics",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "A data-intensive dashboard for power distribution analytics monitoring 5,000+ meters. Features interactive Visx charts, Redis caching, and RBAC security.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "postgresql",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "visx",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    sourceCodeLink: "https://github.com/",
+    image: UPPCL, // Replace with your actual screenshot later
   },
   {
-    name: "Job IT",
+    name: "BEST ICRS Portal",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Public grievance redressal system serving 2,000+ users. Includes i18next multilingual support, AI chatbot integration, and WCAG 2.1 AA accessibility.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "docker",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "redux",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    sourceCodeLink: "https://github.com/",
+    image: ICRS, // Replace with your actual screenshot later
   },
   {
-    name: "Trip Guide",
+    name: "Infinite Horizon",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Employee management portal with Next.js SSR. Features AWS S3 document storage, Elasticsearch for instant retrieval, and modular SSO integration.",
     tags: [
       {
         name: "nextjs",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "aws-s3",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "elasticsearch",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    sourceCodeLink: "https://github.com/",
+    image: horizon, // Replace with your actual screenshot later
   },
 ];
 

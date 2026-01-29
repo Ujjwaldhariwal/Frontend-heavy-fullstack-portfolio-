@@ -40,16 +40,16 @@ type TConfig = {
 
 export const config: TConfig = {
   html: {
-    title: "John Doe — 3D Portfolio",
-    fullName: "John Doe",
-    email: "johndoe@mail.com",
+    title: "Ujjwal Dhariwal",
+    fullName: "Ujjwal Dhariwal",
+    email: "ujjwaldhariwal0@gmail.com",
   },
   hero: {
-    name: "John Doe",
-    p: ["I develop 3D visuals, user", "interfaces and web applications"],
+    name: "Ujjwal Dhairwal",
+    p: ["I architect high-performance UIs", "and scalable data engines."],
   },
   contact: {
-    p: "Get in touch",
+    p: "Let's build something",
     h2: "Contact.",
     form: {
       name: {
@@ -67,14 +67,14 @@ export const config: TConfig = {
     about: {
       p: "Introduction",
       h2: "Overview.",
-      content: `I'm a skilled software developer with experience in TypeScript and
-      JavaScript, and expertise in frameworks like React, Node.js, and
-      Three.js. I'm a quick learner and collaborate closely with clients to
-      create efficient, scalable, and user-friendly solutions that solve
-      real-world problems. Let's work together to bring your ideas to life!`,
+      content: `I am a Full Stack Engineer specializing in performance-driven UI 
+      architecture and data visualization. With expertise in React, TypeScript, 
+      and Node.js, I bridge the gap between complex backend logic and pixel-perfect, 
+      accessible interfaces. I don't just build websites; I engineer interactive 
+      systems that scale.`,
     },
     experience: {
-      p: "What I have done so far",
+      p: "My professional journey",
       h2: "Work Experience.",
     },
     feedbacks: {
@@ -84,11 +84,10 @@ export const config: TConfig = {
     works: {
       p: "My work",
       h2: "Projects.",
-      content: `Following projects showcases my skills and experience through
-    real-world examples of my work. Each project is briefly described with
-    links to code repositories and live demos in it. It reflects my
-    ability to solve complex problems, work with different technologies,
-    and manage projects effectively.`,
+      content: `The following projects demonstrate my ability to merge complex data 
+      with intuitive design. Each project highlights specific skills—from optimizing 
+      React performance and visualizing thousands of data points to architecting 
+      secure Node.js backends. Links to code repositories and live demos are included.`,
     },
   },
 };

@@ -12,10 +12,11 @@ const INITIAL_STATE = Object.fromEntries(
   Object.keys(config.contact.form).map((input) => [input, ""])
 );
 
+// ✅ FINAL CREDENTIALS
 const emailjsConfig = {
-  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  accessToken: import.meta.env.VITE_EMAILJS_ACCESS_TOKEN,
+  serviceId: "service_cfra2nq",
+  templateId: "template_15eg0zo", // Ensure this matches the ID in your Dashboard URL
+  publicKey: "MA0Zgf_HS0ngsIhsD", // Corrected 'I' vs 'l' issue
 };
 
 const Contact = () => {
@@ -36,31 +37,34 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
+    // 1. Prepare the data payload
+    const templateParams = {
+      form_name: form.name,
+      to_name: "Ujjwal Dhariwal",
+      from_email: form.email,
+      to_email: "ujjwaldhariwal0@gmail.com",
+      message: form.message,
+    };
+
+    // 2. Send the email
     emailjs
       .send(
         emailjsConfig.serviceId,
         emailjsConfig.templateId,
-        {
-          form_name: form.name,
-          to_name: config.html.fullName,
-          from_email: form.email,
-          to_email: config.html.email,
-          message: form.message,
-        },
-        emailjsConfig.accessToken
+        templateParams,
+        emailjsConfig.publicKey
       )
       .then(
         () => {
           setLoading(false);
           alert("Thank you. I will get back to you as soon as possible.");
-
           setForm(INITIAL_STATE);
         },
         (error) => {
           setLoading(false);
-
-          console.log(error);
-          alert("Something went wrong.");
+          console.error("EmailJS Error:", error);
+          // Alert the specific error text from EmailJS
+          alert(`Failed: ${error.text || "Check console for details."}`);
         }
       );
   };
@@ -71,7 +75,7 @@ const Contact = () => {
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="bg-black-100 flex-[0.75] rounded-2xl p-8"
+        className="flex-[0.75] bg-[#100d25] p-8 rounded-2xl border border-[#232631] shadow-[0_0_15px_rgba(0,0,0,0.5)]"
       >
         <Header useMotion={false} {...config.contact} />
 
@@ -88,24 +92,25 @@ const Contact = () => {
 
             return (
               <label key={input} className="flex flex-col">
-                <span className="mb-4 font-medium text-white">{span}</span>
+                <span className="mb-4 font-medium text-white tracking-wide">{span}</span>
                 <Component
                   type={input === "email" ? "email" : "text"}
                   name={input}
                   value={form[`${input}`]}
                   onChange={handleChange}
                   placeholder={placeholder}
-                  className="bg-tertiary placeholder:text-secondary rounded-lg border-none px-6 py-4 font-medium text-white outline-none"
+                  className="bg-[#050505] py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border border-[#333] font-medium focus:border-[#d2ff00] focus:shadow-[0_0_15px_rgba(210,255,0,0.3)] transition-all duration-300"
                   {...(input === "message" && { rows: 7 })}
                 />
               </label>
             );
           })}
+          
           <button
             type="submit"
-            className="bg-tertiary shadow-primary w-fit rounded-xl px-8 py-3 font-bold text-white shadow-md outline-none"
+            className="bg-[#d2ff00] py-3 px-8 rounded-xl outline-none w-fit text-black font-bold shadow-[0_0_10px_rgba(210,255,0,0.5)] hover:bg-white hover:scale-105 transition-all duration-300"
           >
-            {loading ? "Sending..." : "Send"}
+            {loading ? "Sending..." : "Send Message"}
           </button>
         </form>
       </motion.div>
