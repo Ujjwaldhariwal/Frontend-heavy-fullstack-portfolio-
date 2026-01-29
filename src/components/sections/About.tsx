@@ -92,15 +92,6 @@ const About = () => {
   );
 };
 
-// Add this to your global CSS for the scan animation
-const styles = `
-@keyframes scan {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100%); }
-}
-.animate-scan {
-  animation: scan 2s linear infinite;
-}
-`;
+
 
 export default SectionWrapper(About, "about");

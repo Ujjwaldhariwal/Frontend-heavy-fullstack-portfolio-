@@ -6,7 +6,7 @@ const Tech = () => {
   return (
     <>
       <div className="flex flex-row flex-wrap justify-center gap-12 relative">
-        {technologies.map((technology, index) => (
+        {technologies.map((technology) => (
           <div
             className="w-28 h-28 relative group cursor-pointer"
             key={technology.name}
