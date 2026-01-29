@@ -45,7 +45,7 @@ export const config: TConfig = {
     email: "ujjwaldhariwal0@gmail.com",
   },
   hero: {
-    name: "Ujjwal Dhairwal",
+    name: "Ujjwal Dhariwal",
     p: ["I architect high-performance UIs", "and scalable data engines."],
   },
   contact: {
